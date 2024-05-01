@@ -29,19 +29,24 @@ def main():
         print("Pilihan:")
         print("1. Tambahkan alamat IP")
         print("2. Hapus alamat IP")
-        print("3. Keluar")
+        print("3. Lihat daftar alamat IP")
+        print("4. Keluar")
 
-        choice = input("Masukkan pilihan Anda (1/2/3): ")
+        choice = input("Masukkan pilihan Anda (1/2/3/4): ")
 
         if choice == '1':
             add_ip(allowed_ips)
         elif choice == '2':
             remove_ip(allowed_ips)
         elif choice == '3':
+            print("Daftar alamat IP yang diizinkan:")
+            for ip in allowed_ips:
+                print(ip)
+        elif choice == '4':
             print("Terima kasih telah menggunakan VynaaMD IP Access Control. Sampai jumpa!")
             break
         else:
-            print("Pilihan tidak valid. Silakan pilih antara 1, 2, atau 3.")
+            print("Pilihan tidak valid. Silakan pilih antara 1, 2, 3, atau 4.")
 
 if __name__ == "__main__":
     main()
