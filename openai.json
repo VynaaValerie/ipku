@@ -1,18 +1,22 @@
-import OpenAI from 'openai';
-
-const openai = new OpenAI({
-  apiKey: 'sk-proj-K4X8rqNGbCA4ZPflbwLqT3BlbkFJhcSRWO4WNjs3oQZk8STq', // defaults to process.env["OPENAI_API_KEY"]
-});
-
-async function main() {
-  const completion = await openai.completions.create({
-    model: 'text-davinci-002',
-    prompt: 'Say this is a test',
-    max_tokens: 6,
-    temperature: 0,
-  });
-
-  const outputJSON = JSON.stringify(completion.choices);
-  console.log(outputJSON);
+{
+  "jadwal_buka_tutup": {
+    "grup": {
+      "buka": "06.00",
+      "tutup": "21.30"
+    }
+  },
+  "jadwal_makan": {
+    "pagi": {
+      "buka": "06.00",
+      "tutup": "09.30"
+    },
+    "siang": {
+      "buka": "12.00",
+      "tutup": "14.30"
+    },
+    "malam": {
+      "buka": "18.00",
+      "tutup": "21.30"
+    }
+  }
 }
-main().catch(console.error);
