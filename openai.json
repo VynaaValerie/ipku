@@ -1,0 +1,18 @@
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: 'sk-proj-K4X8rqNGbCA4ZPflbwLqT3BlbkFJhcSRWO4WNjs3oQZk8STq', // defaults to process.env["OPENAI_API_KEY"]
+});
+
+async function main() {
+  const completion = await openai.completions.create({
+    model: 'text-davinci-002',
+    prompt: 'Say this is a test',
+    max_tokens: 6,
+    temperature: 0,
+  });
+
+  const outputJSON = JSON.stringify(completion.choices);
+  console.log(outputJSON);
+}
+main().catch(console.error);
